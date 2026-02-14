@@ -47,11 +47,11 @@ public class Order {
         for (int i = 0; i < thisBasket.length; i++) {
             Product thisProduct = thisBasket[i];
             Product otherProduct = otherBasket[i];
-            if (thisProduct == null && otherProduct != null) {
+            if (thisProduct == null && otherProduct == null) {
+                continue;
+            } else if (thisProduct == null || otherProduct == null) {
                 return false;
-            } else if (thisProduct != null && otherProduct == null) {
-                return false;
-            } else if (thisProduct != null && !thisProduct.equals(otherProduct)) {
+            } else if (!thisProduct.equals((otherProduct))) {
                 return false;
             }
         }
